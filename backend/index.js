@@ -1,28 +1,27 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
-
-
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
 const initializeAndListenExpress = () => {
   try {
-    app.use(express.json())
+    app
+      .use(express.json())
       .use(cors())
       .use('/api', require('./api/routes/index'))
       .listen(3000, () => {
-        console.log('Server started')
-      })
+        console.log('Server started');
+      });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 const startApi = async () => {
   try {
-    initializeAndListenExpress()
+    initializeAndListenExpress();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-startApi()
+startApi();
