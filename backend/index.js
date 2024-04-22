@@ -5,8 +5,12 @@ const cors = require('cors');
 const initializeAndListenExpress = () => {
   try {
     app
+      .use(
+        cors({
+          credentials: true,
+        }),
+      )
       .use(express.json())
-      .use(cors())
       .use('/api', require('./api/routes/index'))
       .listen(3000, () => {
         console.log('Server started');

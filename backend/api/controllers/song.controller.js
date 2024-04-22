@@ -4,17 +4,16 @@ const accessToken = 'Krcgk8gwVGi5nbqBFBvFsaqhNsfPXpkZa8qU-vo5WG1wRMiTW5HufgP5zJo
 
 const genius = axios.create({
   baseURL: 'https://api.genius.com',
-  headers: {
-    Authorization: `Bearer ${accessToken}`,
-  },
+  // headers: {
+  //   Authorization: `Bearer ${accessToken}`,
+  // },
 });
 
 async function getSongById(req, res) {
   try {
-    const { data } = await genius.get(`/songs/${req.params.id}`);
-    console.log(await data);
+    const { data } = await genius.get(`/songs/${req.params.id}?access_token=${accessToken}`);
     if (data) {
-      return res.status(200).send(data.response.song);
+      return res.status(200).json(data.response.song);
     } else {
       return res.status(404).send('User not found');
     }

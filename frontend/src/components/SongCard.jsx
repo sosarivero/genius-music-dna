@@ -7,20 +7,19 @@ function SongCard() {
   const { songId } = useParams();
 
   async function handleSong() {
-    const result = await getSongById();
-    setSong(await result.song);
-    console.log(song);
+    try {
+      const result = await getSongById(songId);
+      setSong(await result);
+    } catch (error) {
+      console.error('Error fetching song:', error);
+    }
   }
 
   useEffect(() => {
     handleSong();
-  }, []);
+  }, [songId]);
 
-  return (
-    <div>
-      <h1>{song.full_title}</h1>
-    </div>
-  );
+  return <div>{song && <h1>{song.full_title}</h1>}</div>;
 }
 
 export default SongCard;
