@@ -19,7 +19,16 @@ function SongCard() {
     handleSong();
   }, [songId]);
 
-  return <div>{song && <h1>{song.full_title}</h1>}</div>;
+  return (
+    <div>
+      {song && (
+        <>
+          <h1>{song.full_title}</h1>
+          <img src={song.header_image_url} alt="" />
+        </>
+      )}
+    </div>
+  );
 }
 
 export default SongCard;
