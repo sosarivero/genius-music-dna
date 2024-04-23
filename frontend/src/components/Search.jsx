@@ -9,6 +9,7 @@ function SearchBar() {
   async function handleSearch() {
     const results = getSearchResults(searchQuery);
     setSearchResults(await results);
+    console.log(await searchResults);
   }
 
   return (

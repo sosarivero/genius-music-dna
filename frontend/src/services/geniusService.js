@@ -25,6 +25,4 @@ async function getSearchResults(query) {
   }
 }
 
-console.log(await getSearchResults('julio'));
-
 export { getSongById, getSearchResults };
