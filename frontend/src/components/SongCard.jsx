@@ -24,7 +24,7 @@ function SongCard() {
     <div className="song-card">
       {song && (
         <>
-          <h1>{song.full_title}</h1>
+          <h1>{song.title}</h1>
           <img src={song.header_image_url} alt="" />
           Released in {song.release_date_for_display}
           <b>Producers:</b>
