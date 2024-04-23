@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { QueryContext } from '../layouts/mainLayout';
+import SearchResultCard from '../components/SearchResultCard';
 
 function SearchResults() {
   const { searchResults } = useContext(QueryContext);
@@ -7,10 +8,7 @@ function SearchResults() {
     <ul>
       {searchResults !== '' &&
         searchResults.map((obj) => {
-          {
-            console.log(obj.result.full_title);
-          }
-          return <li>{obj.result.title}</li>;
+          return <SearchResultCard obj={obj} />;
         })}
     </ul>
   );
