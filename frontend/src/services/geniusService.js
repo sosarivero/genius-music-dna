@@ -16,22 +16,15 @@ async function getSongById(id) {
   }
 }
 
-async function getSongRelationships(id) {
-  try {
-    const { data } = await genius.get(`/songs/${id}`);
-    return data.song_relationships;
-  } catch (error) {
-    console.log(error.message);
-  }
-}
-
 async function getSearchResults(query) {
   try {
-    const { data } = await genius.get(`/search?q=${query}`);
-    return data.response.hits;
+    const { data } = await genius.get(`/songs/search/${query}`);
+    return data;
   } catch (error) {
     console.log(error.message);
   }
 }
 
-export { getSongRelationships, getSongById, getSearchResults };
+console.log(await getSearchResults('julio'));
+
+export { getSongById, getSearchResults };

@@ -29,7 +29,7 @@ function SongCard() {
           Released in {song.release_date_for_display}
           <b>Producers:</b>
           {song.producer_artists.map((obj) => (
-            <li>{obj.name}</li>
+            <li key={obj.name}>{obj.name}</li>
           ))}
         </>
       )}
