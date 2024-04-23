@@ -1,0 +1,10 @@
+.search-result {
+  display: flex;
+  border: 1px black solid;
+  border-radius: 4px;
+}
+
+.search-result img {
+  height: 100px;
+  width: 100px;
+}
