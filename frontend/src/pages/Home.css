@@ -1,3 +1,24 @@
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(211,84,84,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(135, 38, 210, 0.511);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(211,84,84,0.6);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes blend {
+	0% {box-shadow: 10px 6px 10px rgba(211,84,84,0.6);}
+	50% {box-shadow: 10px 6px 10px rgba(135, 38, 210, 0.511);}
+    100% {box-shadow: 10px 6px 10px rgba(211,84,84,0.6);}
+}
+
 .Logo {
     height: 300px;
     width: 300px;
@@ -5,8 +26,11 @@
     margin: 0  auto;
     box-shadow: 0px 4px 60px rgb(211, 84, 84);
     border-radius: 100%;
-}
+    transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+	img { width: 100%; height: auto; }
 
+}
 
 
 .encabezado {
@@ -38,15 +62,14 @@
     color: aliceblue;
     box-sizing: border-box;
     border: 13px rgb(211, 84, 84); 
-    box-shadow: 15px 7px 15px rgb(211, 84, 84);
+    animation: blend 6s  ease-in-out infinite;
 }
-
-
 
 .Home {
     background-image: url('../../public/studio.jpg');
     height: 100vh;
     padding-top: 150px;
     background-size: cover;
-
 }
+
+

@@ -10,7 +10,7 @@ function Home() {
 Original Samples all in One Place</h1>
   </div>
   <div>
-    <input type='text' className='buscador'></input>
+    <input type='text' className='buscador' required></input>
   </div>
   </div> 
 }
