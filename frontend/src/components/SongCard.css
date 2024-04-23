@@ -1,0 +1,9 @@
+.song-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-card img {
+  width: 250px;
+  height: 250px;
+}
