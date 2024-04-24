@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const accessToken = 'Krcgk8gwVGi5nbqBFBvFsaqhNsfPXpkZa8qU-vo5WG1wRMiTW5HufgP5zJoCsfjh';
+const accessToken = process.env.GENIUS_BEARER;
 
 const genius = axios.create({
   baseURL: 'https://api.genius.com',

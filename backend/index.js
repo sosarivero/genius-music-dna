@@ -1,6 +1,15 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const { checkConnection, syncModels } = require('./api/database/index');
+const { addRelationsToModels } = require('./api/database/models');
+
+async function checkAndSyncSQL() {
+  await checkConnection();
+  addRelationsToModels();
+  await syncModels();
+}
 
 const initializeAndListenExpress = () => {
   try {
@@ -22,6 +31,7 @@ const initializeAndListenExpress = () => {
 
 const startApi = async () => {
   try {
+    await checkAndSyncSQL();
     initializeAndListenExpress();
   } catch (error) {
     console.log(error);
