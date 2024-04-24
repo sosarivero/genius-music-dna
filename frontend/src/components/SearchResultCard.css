@@ -1,5 +1,6 @@
 .search-result {
   display: flex;
+  flex-flow: wrap;
   border: 1px black solid;
   border-radius: 4px;
 }
