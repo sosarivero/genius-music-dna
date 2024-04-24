@@ -3,9 +3,24 @@
   flex-flow: wrap;
   border: 1px black solid;
   border-radius: 4px;
+  color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(16, 16, 20) ;
+  font-size: x-large;
 }
 
 .search-result img {
   height: 100px;
   width: 100px;
 }
+
+.search-result ul {
+  list-style: none;
+  margin-left: 16px;
+}
+
+.search-result li {
+  margin-bottom: 5x;
+}
+
+

@@ -1,0 +1,34 @@
+.search {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 34px;
+    padding: 0px 15px;
+    text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
+    background: linear-gradient(92.88deg, rgb(111, 62, 160) 9.16%, rgb(120, 67, 204) 43.89%, rgb(130, 63, 215) 64.72%);
+    transition: all 0.5s ease 0s;
+    animation: botonblend 6s ease-in-out infinite;
+}
+
+.buscador {
+    height: 30px;
+    width: 550px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    background-color: rgb(57, 45, 98);
+    color: aliceblue;
+    box-sizing: border-box;
+    border: 13px rgb(211, 84, 84);
+    animation: blend 6s ease-in-out infinite;
+}
+
+.barrayboton {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
