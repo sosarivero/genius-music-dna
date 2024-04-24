@@ -23,4 +23,15 @@
   margin-bottom: 5x;
 }
 
+.search-result:hover {
+  animation: homer 8s ease-in-out infinite;
+  border: 3px rgba(105, 45, 62, 0.504) solid;
+}
 
+@keyframes homer {
+  0% {background-color: rgb(16, 16, 20);}
+  25% {background-color: rgba(51, 15, 78, 0.504);}
+  50% {background-color: rgba(71, 15, 78, 0.504);}
+  75% {background-color: rgba(78, 15, 52, 0.504);}
+  100% {background-color: rgb(16, 16, 20);}
+}

@@ -10,8 +10,9 @@ html {
     right: 8px;
     bottom: 8px;
     background: url(http://boutique.flarework.com/wp-content/themes/boutique/img/logo_large.png) center 0px no-repeat ;
-      background-size: contain;
-      -webkit-filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
+    background-size: contain;
+    -webkit-filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
+    filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
   }
   
   .bar {
@@ -161,7 +162,7 @@ html {
     cursor: pointer;
 }
 
-.SignUp:Hover {
+.SignUp:hover {
     text-shadow: 0px 0px 14px rgb(211, 84, 84);
     cursor: pointer;
 }
@@ -170,9 +171,11 @@ html {
     position: relative;
     bottom: 107px;
     left: 170px;
+    display: inline;
     text-shadow: 0px 0px 10px rgb(211, 84, 84);
     background: -webkit-linear-gradient( rgb(188, 12, 241), rgb(212, 4, 4));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
