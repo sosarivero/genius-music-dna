@@ -21,8 +21,9 @@ const User = sequelize.define(
     },
   },
   {
-    createdAt: false,
-    updatedAt: false,
+    createdAt: true,
+    updatedAt: true,
+    underscored: true,
   },
 );
 
