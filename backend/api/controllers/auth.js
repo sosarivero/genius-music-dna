@@ -3,7 +3,6 @@ const User = require('../models/user.model.js');
 const bcrypt = require('bcrypt');
 
 async function Signup(req, res) {
-  console.log(req.body);
   const saltRounds = bcrypt.genSaltSync(parseInt(process.env.SALTROUNDS));
   const hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
   req.body.password = hashedPassword;

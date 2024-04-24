@@ -16,6 +16,7 @@ const initializeAndListenExpress = () => {
     app
       .use(
         cors({
+          origin: '*',
           credentials: true,
         }),
       )
