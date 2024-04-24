@@ -1,75 +1,80 @@
 @keyframes float {
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(211,84,84,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(135, 38, 210, 0.511);
-		transform: translatey(-20px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(211,84,84,0.6);
-		transform: translatey(0px);
-	}
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(211, 84, 84, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(135, 38, 210, 0.511);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(211, 84, 84, 0.6);
+    transform: translatey(0px);
+  }
 }
 
 @keyframes blend {
-	0% {box-shadow: 10px 6px 10px rgba(211,84,84,0.6);}
-	50% {box-shadow: 10px 6px 10px rgba(135, 38, 210, 0.511);}
-    100% {box-shadow: 10px 6px 10px rgba(211,84,84,0.6);}
+  0% {
+    box-shadow: 10px 6px 10px rgba(211, 84, 84, 0.6);
+  }
+  50% {
+    box-shadow: 10px 6px 10px rgba(135, 38, 210, 0.511);
+  }
+  100% {
+    box-shadow: 10px 6px 10px rgba(211, 84, 84, 0.6);
+  }
 }
 
 .Logo {
-    height: 300px;
-    width: 300px;
-    display: flex;
-    margin: 0  auto;
-    box-shadow: 0px 4px 60px rgb(211, 84, 84);
-    border-radius: 100%;
-    transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
-	img { width: 100%; height: auto; }
-
+  height: 300px;
+  width: 300px;
+  display: flex;
+  margin: 0 auto;
+  box-shadow: 0px 4px 60px rgb(211, 84, 84);
+  border-radius: 100%;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-
 .encabezado {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(202, 202, 202);
-    text-shadow: 0px 0px 12px black;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(202, 202, 202);
+  text-shadow: 0px 0px 12px black;
 }
 
 .encabezado2 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    font-size: xx-large;
-    color: rgb(187, 187, 187);
-    text-shadow: 2px 2px 9px black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  font-size: xx-large;
+  color: rgb(187, 187, 187);
+  text-shadow: 2px 2px 9px black;
 }
 
-.buscador {
-    display: flex;
-    margin:  0 auto;
-    margin-top: 60px;
-    height: 30px;
-    width: 550px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: x-large;
-    background-color: rgb(57, 45, 98);
-    color: aliceblue;
-    box-sizing: border-box;
-    border: 13px rgb(211, 84, 84); 
-    animation: blend 6s  ease-in-out infinite;
+.Home .buscador {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 60px;
+  height: 30px;
+  width: 550px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+  background-color: rgb(57, 45, 98);
+  color: aliceblue;
+  box-sizing: border-box;
+  border: 13px rgb(211, 84, 84);
+  animation: blend 6s ease-in-out infinite;
 }
 
 .Home {
-    background-image: url('../../public/studio.jpg');
-    height: 100vh;
-    padding-top: 150px;
-    background-size: cover;
+  background-image: url('../../public/studio.jpg');
+  height: 100vh;
+  padding-top: 150px;
+  background-size: cover;
 }
-
-

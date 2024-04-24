@@ -8,7 +8,7 @@ function SearchResults() {
     <ul>
       {searchResults !== '' &&
         searchResults.map((obj) => {
-          return <SearchResultCard obj={obj} />;
+          return <SearchResultCard obj={obj} key={obj.result.id} />;
         })}
     </ul>
   );

@@ -9,12 +9,23 @@ function SearchBar() {
   async function handleSearch() {
     const results = getSearchResults(searchQuery);
     setSearchResults(await results);
-    console.log(await searchResults);
+  }
+
+  async function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      await handleSearch();
+    }
   }
 
   return (
     <>
-      <input type="text" placeholder="Search a song" onChange={(e) => setSearchQuery(e.target.value)} />
+      <input
+        className="buscador"
+        type="text"
+        placeholder="Search a song"
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyDown={handleKeyPress}
+      />
       <button type="button" onClick={handleSearch}>
         Search
       </button>

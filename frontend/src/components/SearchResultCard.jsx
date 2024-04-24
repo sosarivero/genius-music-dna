@@ -1,7 +1,6 @@
 import './SearchResultCard.css';
 
 function SearchResultCard({ obj }) {
-  console.log(obj);
   return (
     <div className="search-result">
       <img src={obj.result.song_art_image_thumbnail_url} alt="" />
