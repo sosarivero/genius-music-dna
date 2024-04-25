@@ -1,187 +1,248 @@
 html {
-    background: #F2F2F2;
-  }
-  
-  .bg {
-  
-    position: relative;
-    top: 9px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    background: url(http://boutique.flarework.com/wp-content/themes/boutique/img/logo_large.png) center 0px no-repeat ;
-    background-size: contain;
-    -webkit-filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
-    filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
-  }
-  
-  .bar {
-      position: relative;
-      height: 8px;
-      background: #b52e5e;
-      width:  0%;
-      top: -70px;
-      left: 18px;
-      margin-top: 8px;
-      box-shadow: 0 0 3px rgba(192,192,192,0.9);
-      animation: fill 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  .bar.fill1 {
-    animation: fill-1 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  .bar.fill2 {
-     animation:  fill-2 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  
-  .bar.fill3 {
-     animation:  fill-3 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  
-  .bar.fill4 {
-     animation:  fill-4 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  .bar.fill5 {
-     animation:  fill-5 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  .bar.fill6 {
-     animation:  fill-6 5s infinite alternate, colors 5s infinite alternate;
-  }
-  
-  
-  
-  @keyframes fill {
-    0%   { width: 0; }
-    33%  { width: 30px;}
-    66%  { width: 10px;}
-    100% { width: 105px; }
-  }
-  
-  @keyframes fill-1 {
-    0%   { width: 0; }
-    33%  { width: 50px;}
-    66%  { width: 20px;}
-    100% { width: 130px; }
-  }
-  
-  @keyframes fill-2 {
-    0%   { width: 0; }
-    33%  { width: 90px;}
-    66%  { width: 70px;}
-    100% { width: 136px; }
-  }
-  
-  @keyframes fill-3 {
-    0%   { width: 0; }
-    33%  { width: 50px;}
-    66%  { width: 24px;}
-    100% { width: 109px; }
-  }
-  
-  @keyframes fill-4 {
-    0%   { width: 0; }
-    33%  { width: 98px;}
-    66%  { width: 34px;}
-    100% { width: 99px; }
-  }
-  
-  @keyframes fill-5 {
-    0%   { width: 0; }
-    33%  { width: 30px;}
-    66%  { width: 10px;}
-    100% { width: 148px; }
-  }
-  
-  
-  @keyframes fill-6 {
-    0%   { width: 0; }
-    33%  { width: 48px;}
-    66%  { width: 22px;}
-    100% { width: 140px; }
-  }
-  
-  @keyframes colors {
-    0% { background-color: #d14a7e;}
-    50% { background-color: rgb(126, 51, 170);}
-    100% { background-color: #c45454;}
-  }
-  
+  background: #f2f2f2;
+}
 
+.bg {
+  position: relative;
+  top: 9px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: url(http://boutique.flarework.com/wp-content/themes/boutique/img/logo_large.png) center 0px no-repeat;
+  background-size: contain;
+  -webkit-filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
+  filter: drop-shadow(0px 6px 25px rgba(140, 48, 160, 0.5));
+}
 
+.bar {
+  position: relative;
+  height: 8px;
+  background: #b52e5e;
+  width: 0%;
+  top: -70px;
+  left: 18px;
+  margin-top: 8px;
+  box-shadow: 0 0 3px rgba(192, 192, 192, 0.9);
+  animation:
+    fill 5s infinite alternate,
+    colors 5s infinite alternate;
+}
 
+.bar.fill1 {
+  animation:
+    fill-1 5s infinite alternate,
+    colors 5s infinite alternate;
+}
 
+.bar.fill2 {
+  animation:
+    fill-2 5s infinite alternate,
+    colors 5s infinite alternate;
+}
 
+.bar.fill3 {
+  animation:
+    fill-3 5s infinite alternate,
+    colors 5s infinite alternate;
+}
 
+.bar.fill4 {
+  animation:
+    fill-4 5s infinite alternate,
+    colors 5s infinite alternate;
+}
+
+.bar.fill5 {
+  animation:
+    fill-5 5s infinite alternate,
+    colors 5s infinite alternate;
+}
+
+.bar.fill6 {
+  animation:
+    fill-6 5s infinite alternate,
+    colors 5s infinite alternate;
+}
+
+@keyframes fill {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 30px;
+  }
+  66% {
+    width: 10px;
+  }
+  100% {
+    width: 105px;
+  }
+}
+
+@keyframes fill-1 {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 50px;
+  }
+  66% {
+    width: 20px;
+  }
+  100% {
+    width: 130px;
+  }
+}
+
+@keyframes fill-2 {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 90px;
+  }
+  66% {
+    width: 70px;
+  }
+  100% {
+    width: 136px;
+  }
+}
+
+@keyframes fill-3 {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 50px;
+  }
+  66% {
+    width: 24px;
+  }
+  100% {
+    width: 109px;
+  }
+}
+
+@keyframes fill-4 {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 98px;
+  }
+  66% {
+    width: 34px;
+  }
+  100% {
+    width: 99px;
+  }
+}
+
+@keyframes fill-5 {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 30px;
+  }
+  66% {
+    width: 10px;
+  }
+  100% {
+    width: 148px;
+  }
+}
+
+@keyframes fill-6 {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 48px;
+  }
+  66% {
+    width: 22px;
+  }
+  100% {
+    width: 140px;
+  }
+}
+
+@keyframes colors {
+  0% {
+    background-color: #d14a7e;
+  }
+  50% {
+    background-color: rgb(126, 51, 170);
+  }
+  100% {
+    background-color: #c45454;
+  }
+}
 
 .Header {
-    background-color: rgb(23, 21, 33);
-    color: rgb(223, 223, 223);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
-    height: 50px;
-    text-align: end;
-    box-shadow: 0px 1px 50px rgb(211, 84, 84);
-    text-shadow: 0px 0px 4px rgb(211, 84, 84);
-    animation: blend 6s ease-in-out infinite;
+  background-color: rgb(23, 21, 33);
+  color: rgb(223, 223, 223);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  height: 50px;
+  text-align: end;
+  box-shadow: 0px 1px 50px rgb(211, 84, 84);
+  text-shadow: 0px 0px 4px rgb(211, 84, 84);
+  animation: blend 6s ease-in-out infinite;
 }
 
 .divHeader {
-    height: 50px;
+  height: 50px;
 }
 
 .LogIn {
-    position: relative;
-    right: 100px;
-    top: 15px;
-    background: none;
-    border: none;
-    color: aliceblue;
-    font-size: large; 
-    cursor: pointer;
+  position: relative;
+  right: 100px;
+  top: 15px;
+  background: none;
+  border: none;
+  color: aliceblue;
+  font-size: large;
+  cursor: pointer;
 }
 
 .LogIn:hover {
-    text-shadow: 0px 0px 14px rgb(211, 84, 84);
-    cursor: pointer;
+  text-shadow: 0px 0px 14px rgb(211, 84, 84);
+  cursor: pointer;
 }
 
 .SignUp {
-    position: relative;
-    right: 50px;
-    top: 15px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: aliceblue;
-    font-size: large;
-    cursor: pointer;
+  position: relative;
+  right: 50px;
+  top: 15px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: aliceblue;
+  font-size: large;
+  cursor: pointer;
 }
 
 .SignUp:hover {
-    text-shadow: 0px 0px 14px rgb(211, 84, 84);
-    cursor: pointer;
+  text-shadow: 0px 0px 14px rgb(211, 84, 84);
+  cursor: pointer;
 }
 
 .NameHeader {
-    position: relative;
-    bottom: 107px;
-    left: 170px;
-    display: inline;
-    text-shadow: 0px 0px 10px rgb(211, 84, 84);
-    background: -webkit-linear-gradient( rgb(188, 12, 241), rgb(212, 4, 4));
+  position: relative;
+  bottom: 107px;
+  left: 170px;
+  display: inline;
+  text-shadow: 0px 0px 10px rgb(211, 84, 84);
+  background: -webkit-linear-gradient(rgb(188, 12, 241), rgb(212, 4, 4));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
 div > button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

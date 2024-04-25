@@ -1,16 +1,21 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <>
       <div className="divHeader">
         <div className="Header">
-          <button type="button" className="LogIn">
-            LogIn{' '}
-          </button>
-          <button type="button" className="SignUp">
-            SignUp{' '}
-          </button>
+          <Link to="/signin">
+            <button type="button" className="LogIn">
+              LogIn{' '}
+            </button>
+          </Link>
+          <Link to="/signup">
+            <button type="button" className="SignUp">
+              SignUp{' '}
+            </button>
+          </Link>
         </div>
         <div className="logo-holder">
           <div className="bg"></div>
@@ -19,7 +24,9 @@ const Header = () => {
           <div className="bar fill3"></div>
           <div className="bar fill4"></div>
           {/*     <img className='RiffRoots' src='https://www.onlygfx.com/wp-content/uploads/2022/03/colorful-sound-wave-equalizer-2.png' />*/}
-          <h1 className="NameHeader">RiffRoots</h1>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <h1 className="NameHeader">RiffRoots</h1>
+          </Link>
         </div>
       </div>
     </>
