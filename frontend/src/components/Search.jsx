@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { getSearchResults } from '../services/geniusService';
 import { QueryContext } from '../layouts/mainLayout';
+import './Search.css'
 
 function SearchBar() {
   const { searchResults, setSearchResults } = useContext(QueryContext);
@@ -18,7 +19,7 @@ function SearchBar() {
   }
 
   return (
-    <>
+    <div className='barrayboton'>
       <input
         className="buscador"
         type="text"
@@ -26,10 +27,10 @@ function SearchBar() {
         onChange={(e) => setSearchQuery(e.target.value)}
         onKeyDown={handleKeyPress}
       />
-      <button type="button" onClick={handleSearch}>
+      <button type="button"  className='search' onClick={handleSearch}>
         Search
       </button>
-    </>
+    </div>
   );
 }
 
