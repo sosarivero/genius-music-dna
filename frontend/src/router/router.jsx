@@ -5,6 +5,7 @@ import SearchResults from '../pages/SearchResults';
 import SongCard from '../components/SongCard';
 import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
+import User from '../pages/User';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: '/search', element: <SearchResults /> },
       { path: '/signup', element: <SignUp /> },
       { path: '/signin', element: <SignIn /> },
+      { path: '/user/:userId', element: <User />},
     ],
   },
 ]);

@@ -14,8 +14,8 @@ function YoutubeEmbed({ youtubeLink }) {
     <div>
       <iframe
         className="video"
-        width="425"
-        height="235"
+        width="525"
+        height="335"
         src={`https://www.youtube.com/embed/${getYTCode(youtubeLink)}`}
         title="YouTube video player"
         frameBorder="0"
