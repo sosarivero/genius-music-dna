@@ -37,13 +37,18 @@ function SongCard() {
                 <li key={obj.name}>{obj.name}</li>
               ))}
             </div>
-            <YoutubeEmbed youtubeLink={song.media[0].url} />
+            {/* Renders Youtube embeds if 'youtube' is listed as one of the media providers */}
+            {song.media.map((item, index) => {
+              console.log(item.provider, index);
+              if (item.provider === 'youtube') {
+                return <YoutubeEmbed youtubeLink={item.url} />;
+              }
+            })}
           </>
         )}
       </div>
       {song && (
         <div>
-          {console.log(song)}
           {song.song_relationships[0].songs.map((obj) => (
             <div className="song-card reversed">
               <Link to={obj.api_path}>
