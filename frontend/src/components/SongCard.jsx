@@ -37,6 +37,7 @@ function SongCard() {
                 <li key={obj.name}>{obj.name}</li>
               ))}
             </div>
+            <YoutubeEmbed youtubeLink={song.media[0].url} />
           </>
         )}
       </div>
