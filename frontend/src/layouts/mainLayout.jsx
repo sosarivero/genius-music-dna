@@ -13,7 +13,7 @@ function Root() {
   const [user, setUser] = useState(null);
   const location = useLocation();
 
-  let isNotRootPath = location.pathname !== '/';
+  const hideSearch = ['/', '/signup', '/signin'].includes(location.pathname);
 
   useEffect(() => {
     async function handleUser() {
@@ -27,15 +27,16 @@ function Root() {
       }
     }
 
-    const funct = async () => await handleUser();
-    funct();
+    // const funct = async () => await handleUser();
+    // funct();
+    handleUser();
   }, [user]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <QueryContext.Provider value={{ searchResults, setSearchResults }}>
         <Header />
-        {isNotRootPath && <SearchBar />}
+        {!hideSearch && <SearchBar />}
         <Outlet />
         <footer>
           <small>Footer</small>

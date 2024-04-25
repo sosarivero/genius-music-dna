@@ -9,7 +9,7 @@ const Header = () => {
     <>
       <div className="divHeader">
         <div className="Header">
-          {user === null ? (
+          {!user ? (
             <>
               <Link to="/signin">
                 <button type="button" className="LogIn">
