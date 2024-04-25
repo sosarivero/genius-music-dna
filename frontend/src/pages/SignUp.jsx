@@ -12,8 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link as RouterLink } from 'react-router-dom';
-import './SignUp.css'
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import './SignUp.css';
 
 import { signUp } from '../services/authService';
 
@@ -45,6 +45,8 @@ const theme = createTheme({
 const defaultTheme = theme;
 
 export default function SignUp() {
+  const navigate = useNavigate();
+
   async function handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -62,7 +64,11 @@ export default function SignUp() {
     };
 
     try {
-      await signUp(requestBody);
+      const response = await signUp(requestBody);
+      console.log(response);
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('user', response.user);
+      navigate('../');
     } catch (error) {
       console.error(error);
     }
@@ -86,10 +92,10 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box className='boton' component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 6 }}>
+          <Box className="boton" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 6 }}>
             <Grid container spacing={4}>
               <Grid item xs={12} sm={6}>
-                <TextField 
+                <TextField
                   autoComplete="given-name"
                   name="first_name"
                   required
@@ -113,7 +119,7 @@ export default function SignUp() {
                 <TextField required fullWidth id="email" label="Email Address" name="email" autoComplete="email" />
               </Grid>
               <Grid item xs={12}>
-                <TextField 
+                <TextField
                   required
                   fullWidth
                   name="password"

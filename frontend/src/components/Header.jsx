@@ -6,16 +6,22 @@ const Header = () => {
     <>
       <div className="divHeader">
         <div className="Header">
-          <Link to="/signin">
-            <button type="button" className="LogIn">
-              LogIn{' '}
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button type="button" className="SignUp">
-              SignUp{' '}
-            </button>
-          </Link>
+          {localStorage.getItem('token') === null ? (
+            <>
+              <Link to="/signin">
+                <button type="button" className="LogIn">
+                  LogIn
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button type="button" className="SignUp">
+                  SignUp
+                </button>
+              </Link>
+            </>
+          ) : (
+            <span>{localStorage.getItem('user')}</span>
+          )}
         </div>
         <div className="logo-holder">
           <div className="bg"></div>
