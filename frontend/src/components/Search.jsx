@@ -1,15 +1,18 @@
 import { useState, useContext, useEffect } from 'react';
 import { getSearchResults } from '../services/geniusService';
 import { QueryContext } from '../layouts/mainLayout';
-import './Search.css'
+import { useNavigate } from 'react-router-dom';
+import './Search.css';
 
 function SearchBar() {
   const { searchResults, setSearchResults } = useContext(QueryContext);
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   async function handleSearch() {
     const results = getSearchResults(searchQuery);
     setSearchResults(await results);
+    navigate('/search');
   }
 
   async function handleKeyPress(event) {
@@ -19,7 +22,7 @@ function SearchBar() {
   }
 
   return (
-    <div className='barrayboton'>
+    <div className="barrayboton">
       <input
         className="buscador"
         type="text"
@@ -27,7 +30,7 @@ function SearchBar() {
         onChange={(e) => setSearchQuery(e.target.value)}
         onKeyDown={handleKeyPress}
       />
-      <button type="button"  className='search' onClick={handleSearch}>
+      <button type="button" className="search" onClick={handleSearch}>
         Search
       </button>
     </div>
