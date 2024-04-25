@@ -13,8 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import signUp from '../services/authService';
-import { deepPurple, lightBlue } from '@mui/material/colors';
+import { signUp } from '../services/authService';
 
 function Copyright(props) {
   return (

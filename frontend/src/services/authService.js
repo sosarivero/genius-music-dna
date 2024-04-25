@@ -10,4 +10,14 @@ async function signUp(signUpData) {
   }
 }
 
-export default signUp;
+async function signIn(logInData) {
+  try {
+    const { data } = await api.post('/auth/login', logInData);
+
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export { signUp, signIn };
