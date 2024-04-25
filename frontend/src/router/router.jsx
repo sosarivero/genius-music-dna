@@ -19,14 +19,14 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <SignUp />,
         loader: () => {
-          return localStorage.token === null ? null : redirect('/');
+          return localStorage.getItem('token') === null ? null : redirect('/');
         },
       },
       {
         path: '/signin',
         element: <SignIn />,
         loader: () => {
-          return localStorage.token === null ? null : redirect('/');
+          return localStorage.getItem('token') === null ? null : redirect('/');
         },
       },
       { path: '/user/:userId', element: <User />},

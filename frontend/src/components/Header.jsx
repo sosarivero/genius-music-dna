@@ -20,7 +20,7 @@ const Header = () => {
               </Link>
             </>
           ) : (
-            <span>{localStorage.getItem('user')}</span>
+            <button className='user'>{localStorage.getItem('user')}</button>
           )}
         </div>
         <div className="logo-holder">

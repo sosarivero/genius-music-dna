@@ -1,0 +1,51 @@
+hr {
+    display: block;
+    margin: auto;    
+    width:1500px;
+    color: rgb(68, 18, 70);
+}
+
+.box {
+    height: 250px;
+    width: 250px;
+    border: 5px solid rgb(68, 18, 70);
+    padding: 5px;
+    margin: 80px;
+    animation: borde 6s ease-in-out infinite;
+    box-shadow: 0px 15px 20px black;
+}
+
+.userImg {
+    width: 250px;
+    height: 250px;
+}
+
+.userName {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    margin: 20px;
+    text-shadow: 0px 5px 25px rgb(205, 52, 182);
+}
+
+@keyframes borde {
+    0% {border: 5px solid rgb(126, 37, 129);}
+    50% {border: 5px solid rgb(119, 34, 54);}
+    100% {border: 5px solid rgb(126, 37, 129);}
+}
+
+.userFav{
+    border: 5px solid rgb(68, 18, 70);
+    padding: 70px;
+    width: 700px;
+    margin: 40px;
+    height: 500px;
+
+}
+.user_section{
+    display: flex;
+}
+
+body {
+    background-color: rgb(16, 16, 20);
+}
