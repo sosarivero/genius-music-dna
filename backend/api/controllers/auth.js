@@ -30,7 +30,7 @@ async function Login(req, res) {
     if (comparePass) {
       const payload = { email: user.email };
       const token = jwt.sign(payload, process.env.SECRET);
-      return res.status(200).json({ token });
+      return res.status(200).json({ token: token, user: user.email });
     } else {
       return res.status(404).json('Error: Passwords do not match');
     }
