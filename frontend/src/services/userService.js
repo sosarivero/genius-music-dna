@@ -12,7 +12,6 @@ async function getUser(id) {
 async function getProfile(body) {
   try {
     const { data } = await api.get('/user/profile', { headers: { Authorization: `${body}` } });
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);

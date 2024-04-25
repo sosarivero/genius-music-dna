@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/Search';
 import { useLocation } from 'react-router-dom';
@@ -15,9 +15,21 @@ function Root() {
 
   let isNotRootPath = location.pathname !== '/';
 
-  {
-    getProfile(localStorage.getItem('token'));
-  }
+  useEffect(() => {
+    async function handleUser() {
+      try {
+        let loginUser = await getProfile(localStorage.getItem('token'));
+        setUser(loginUser);
+        console.log(user);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+
+    const funct = async () => await handleUser();
+    funct();
+  }, []);
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <QueryContext.Provider value={{ searchResults, setSearchResults }}>
