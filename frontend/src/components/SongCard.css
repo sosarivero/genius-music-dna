@@ -12,26 +12,6 @@
   overflow: visible;
 }
 
-.info {
-  text-shadow: 0px 0px 15px black;
-}
-
-.songtitle {
-  font-size: xx-large;
-}
-
-.songartist {
-  margin-bottom: 30px;
-}
-
-.released{
-  margin-bottom: 50px;
-}
-
-.producer {
-  margin-top: 50px;
-}
-
 .reversed {
   flex-direction: row-reverse;
   background: linear-gradient(-60deg, rgb(51, 31, 38), rgb(170, 51, 117));
