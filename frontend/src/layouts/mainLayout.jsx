@@ -18,9 +18,10 @@ function Root() {
   useEffect(() => {
     async function handleUser() {
       try {
-        let loginUser = await getProfile(localStorage.getItem('token'));
-        setUser(loginUser);
-        console.log(user);
+        if (user === null) {
+          let loginUser = await getProfile(localStorage.getItem('token'));
+          setUser(loginUser);
+        }
       } catch (error) {
         console.log(error.message);
       }
@@ -28,7 +29,7 @@ function Root() {
 
     const funct = async () => await handleUser();
     funct();
-  }, []);
+  }, [user]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

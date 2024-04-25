@@ -4,11 +4,12 @@ import { UserContext } from '../layouts/mainLayout';
 import { useContext } from 'react';
 
 const Header = () => {
+  const { user } = useContext(UserContext);
   return (
     <>
       <div className="divHeader">
         <div className="Header">
-          {localStorage.getItem('token') === null ? (
+          {user === null ? (
             <>
               <Link to="/signin">
                 <button type="button" className="LogIn">
@@ -22,7 +23,9 @@ const Header = () => {
               </Link>
             </>
           ) : (
-            <span>Usuario</span>
+            <span>
+              {user.first_name} {user.last_name}
+            </span>
           )}
         </div>
         <div className="logo-holder">

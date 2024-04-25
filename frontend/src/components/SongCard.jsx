@@ -39,7 +39,6 @@ function SongCard() {
             </div>
             {/* Renders Youtube embeds if 'youtube' is listed as one of the media providers */}
             {song.media.map((item, index) => {
-              console.log(item.provider, index);
               if (item.provider === 'youtube') {
                 return <YoutubeEmbed youtubeLink={item.url} />;
               }
