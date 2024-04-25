@@ -26,6 +26,7 @@ function SongCard() {
       <div className="song-card">
         {song && (
           <>
+          {console.log(song)}
             <img src={song.header_image_url} alt="" />
             <div className="info">
               <h1 className="songtitle">{song.title}</h1>
@@ -37,7 +38,8 @@ function SongCard() {
                 <li key={obj.name}>{obj.name}</li>
               ))}
             </div>
-            <YoutubeEmbed youtubeLink={song.media[1].url}></YoutubeEmbed>
+            {console.log(song.media[1].url)}
+            {song.media[1].url.includes('youtube') && (<YoutubeEmbed youtubeLink={song.media[1].url}></YoutubeEmbed>)}
           </>
         )}
       </div>
@@ -51,7 +53,6 @@ function SongCard() {
                 <h1>{obj.title}</h1>
                 <h2>{obj.artist_names}</h2>
                 {console.log(obj)}
-                {/* <YoutubeEmbed youtubeLink={song.media[1].url}></YoutubeEmbed> */}
               </div>
             </div>
           ))}

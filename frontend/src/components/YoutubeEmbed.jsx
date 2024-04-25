@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './YoutubeEmbed.css'
 
 function getYTCode(str) {
   const split = str.split('v=');
@@ -13,7 +14,7 @@ function YoutubeEmbed({ youtubeLink }) {
   console.log(youtubeLink);
   return (
     <div>
-      <iframe
+      <iframe className='video'
         width="425"
         height="235"
         src={`https://www.youtube.com/embed/${getYTCode(youtubeLink)}`}
