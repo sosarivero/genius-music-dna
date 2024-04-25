@@ -45,7 +45,7 @@ function SongCard() {
       {console.log(song)}
       {song.song_relationships[0].songs.map((obj) =>
         <div className="song-card reversed">
-          <img src={obj.header_image_url} alt="" />
+          <img className='sampleImg' src={obj.header_image_url} alt="" />
         <div className='info'>
           <h1>{obj.title}</h1>
           <h2>{obj.artist_names}</h2>
