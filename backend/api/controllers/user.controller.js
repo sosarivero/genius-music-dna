@@ -1,4 +1,3 @@
-const { Op } = 'sequelize';
 const User = require('../models/user.model');
 
 async function getOneUser(req, res) {
@@ -28,7 +27,20 @@ async function createUser(req, res) {
   }
 }
 
+async function getProfile(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { email: res.locals.user.email },
+    });
+
+    res.status(200).send(res.locals.user);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
   createUser,
+  getProfile,
 };

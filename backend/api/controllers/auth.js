@@ -11,7 +11,7 @@ async function Signup(req, res) {
     const payload = { email: req.body.email };
     const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '1h' });
 
-    return res.status(200).json({ token, user: user.email });
+    return res.status(200).json({ token });
   } catch (error) {
     return res.status(500).send(error);
   }
@@ -30,7 +30,7 @@ async function Login(req, res) {
     if (comparePass) {
       const payload = { email: user.email };
       const token = jwt.sign(payload, process.env.SECRET);
-      return res.status(200).json({ token: token, user: user.email });
+      return res.status(200).json({ token });
     } else {
       return res.status(404).json('Error: Passwords do not match');
     }

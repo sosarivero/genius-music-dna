@@ -1,5 +1,7 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../layouts/mainLayout';
+import { useContext } from 'react';
 
 const Header = () => {
   return (
@@ -20,7 +22,7 @@ const Header = () => {
               </Link>
             </>
           ) : (
-            <span>{localStorage.getItem('user')}</span>
+            <span>Usuario</span>
           )}
         </div>
         <div className="logo-holder">

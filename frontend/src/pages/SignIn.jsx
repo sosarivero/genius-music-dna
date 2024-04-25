@@ -47,7 +47,6 @@ export default function SignIn() {
     try {
       const response = await signIn(requestBody);
       localStorage.setItem('token', response.token);
-      localStorage.setItem('user', response.user);
       navigate('../');
     } catch (error) {
       console.log(error);

@@ -65,9 +65,7 @@ export default function SignUp() {
 
     try {
       const response = await signUp(requestBody);
-      console.log(response);
       localStorage.setItem('token', response.token);
-      localStorage.setItem('user', response.user);
       navigate('../');
     } catch (error) {
       console.error(error);
