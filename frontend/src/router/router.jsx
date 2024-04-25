@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
 import Root from '../layouts/mainLayout';
 import Home from '../pages/Home';
 import SearchResults from '../pages/SearchResults';
@@ -14,8 +14,20 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/songs/:songId', element: <SongCard /> },
       { path: '/search', element: <SearchResults /> },
-      { path: '/signup', element: <SignUp /> },
-      { path: '/signin', element: <SignIn /> },
+      {
+        path: '/signup',
+        element: <SignUp />,
+        loader: () => {
+          return localStorage.token === null ? null : redirect('/');
+        },
+      },
+      {
+        path: '/signin',
+        element: <SignIn />,
+        loader: () => {
+          return localStorage.token === null ? null : redirect('/');
+        },
+      },
     ],
   },
 ]);
