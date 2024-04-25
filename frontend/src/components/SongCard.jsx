@@ -23,42 +23,41 @@ function SongCard() {
 
   return (
     <>
-    <div className="song-card">
-    {song && (
-        <>
-          <img src={song.header_image_url} alt="" />
-          <div className="info">
-            <h1 className='songtitle'>{song.title}</h1>
-            <h2 className='songartist'>{song.artist_names}</h2>
-            <a className='released'>Released in {song.release_date_for_display}</a>
-            <br />
-            <b className='producer'>Producers:</b>
-            {song.producer_artists.map((obj) => (
-              <li key={obj.name}>{obj.name}</li>
-            ))}
-          </div>
-        </>
-      )}
-
-{/*         <YoutubeEmbed youtubeLink={song.media[1].url}></YoutubeEmbed> */}
-
-    </div>
-      {song &&
-    <div>
-      
-      {console.log(song)}
-      {song.song_relationships[0].songs.map((obj) =>
-        <div key={obj.id} className="song-card reversed">
-          <img className='sampleImg' src={obj.header_image_url} alt="" />
-        <div className='info'>
-          <h1>{obj.title}</h1>
-          <h2>{obj.artist_names}</h2>
-          </div>
+      <div className="song-card">
+        {song && (
+          <>
+            <img src={song.header_image_url} alt="" />
+            <div className="info">
+              <h1 className="songtitle">{song.title}</h1>
+              <h2 className="songartist">{song.artist_names}</h2>
+              <a className="released">Released in {song.release_date_for_display}</a>
+              <br />
+              <b className="producer">Producers:</b>
+              {song.producer_artists.map((obj) => (
+                <li key={obj.name}>{obj.name}</li>
+              ))}
+            </div>
+            <YoutubeEmbed youtubeLink={song.media[1].url}></YoutubeEmbed>
+          </>
+        )}
+      </div>
+      {song && (
+        <div>
+          {console.log(song.media[1].url)}
+          {song.song_relationships[0].songs.map((obj) => (
+            <div key={obj.id} className="song-card reversed">
+              <img className="sampleImg" src={obj.header_image_url} alt="" />
+              <div className="info">
+                <h1>{obj.title}</h1>
+                <h2>{obj.artist_names}</h2>
+                {console.log(obj)}
+                {/* <YoutubeEmbed youtubeLink={song.media[1].url}></YoutubeEmbed> */}
+              </div>
+            </div>
+          ))}
         </div>
-    )}
-    </div>
-    }
-      </>
+      )}
+    </>
   );
 }
 
