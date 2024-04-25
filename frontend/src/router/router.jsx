@@ -5,6 +5,7 @@ import SearchResults from '../pages/SearchResults';
 import SongCard from '../components/SongCard';
 import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
+import User from '../pages/User';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
           return localStorage.getItem('token') === null ? null : redirect('/');
         },
       },
+      { path: '/user/:userId', element: <User />},
     ],
   },
 ]);
