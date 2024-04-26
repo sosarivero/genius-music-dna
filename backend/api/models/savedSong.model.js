@@ -1,8 +1,8 @@
 const { sequelize } = require('../database/index');
 const { DataTypes } = require('sequelize');
 
-const Song = sequelize.define(
-  'song',
+const SavedSong = sequelize.define(
+  'saved_song',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,4 +32,4 @@ const Song = sequelize.define(
   },
 );
 
-module.exports = Song;
+module.exports = SavedSong;
