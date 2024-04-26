@@ -30,12 +30,7 @@ function FavouriteButton({ song }) {
   }
 
   return (
-    <button
-      className={alreadySaved ? 'saved' : 'not-saved'}
-      type="button"
-      onClick={handleFavouriteAdd}
-      style={alreadySaved ? { backgroundColor: 'red' } : { backgroundColor: 'blue' }}
-    >
+    <button className={alreadySaved ? 'saved' : 'not-saved'} type="button" onClick={handleFavouriteAdd}>
       <img src="https://www.freeiconspng.com/thumbs/like-icon-png/like-outline-icon-png-22.png" />
     </button>
   );
