@@ -27,4 +27,13 @@ async function addSongToFavourites(userId, songId) {
   }
 }
 
-export { getUser, getProfile, addSongToFavourites };
+async function getUserSongRelationship(userId, songId) {
+  try {
+    const response = await api.get(`/user/${userId}/song/${songId}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export { getUser, getProfile, addSongToFavourites, getUserSongRelationship };
