@@ -82,10 +82,32 @@ async function deleteSavedSongFromUser(req, res) {
   }
 }
 
+async function findSongUserRelationship(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    const savedSong = await SavedSong.findOne({
+      where: { id: req.params.songId },
+    });
+
+    if (!user || !savedSong) {
+      return res.status(404).send(false);
+    }
+
+    const result = await savedSong.hasUser(user);
+    console.log(await result);
+    return res.status(200).send(await result);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 module.exports = {
   getOneUser,
   createUser,
   getProfile,
   addSavedSongToUser,
   deleteSavedSongFromUser,
+  findSongUserRelationship,
 };
