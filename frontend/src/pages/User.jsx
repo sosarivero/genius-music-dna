@@ -33,10 +33,7 @@ const User = () => {
               ></img>
               <h1 className="userName">{`${userToRender.first_name} ${userToRender.last_name}`}</h1>
             </div>
-            <div className="userFav"> 
-{/*               <img  src='https://www.freeiconspng.com/thumbs/like-icon-png/like-outline-icon-png-22.png'
-              className='like'>
-              </img> */}
+            <div className="userFav">
             </div>
           </section>
         </>

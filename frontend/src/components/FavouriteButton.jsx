@@ -17,8 +17,8 @@ function FavouriteButton({ song }) {
   }
 
   return (
-    <button type="button" onClick={handleFavouriteAdd}>
-      Añador a favoritos
+    <button className='like' type="button" onClick={handleFavouriteAdd}>
+      <img src='https://www.freeiconspng.com/thumbs/like-icon-png/like-outline-icon-png-22.png'/>
     </button>
   );
 }

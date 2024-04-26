@@ -1,0 +1,25 @@
+.like {
+    background: none;
+    border: none;
+    scale: 30%;
+    position: relative;
+    right: 135px;
+}
+
+.like:hover {
+cursor: pointer;
+border-radius: 100%;
+}
+
+.like:active{
+background-color: red;
+box-shadow: 0px 0px 50px rgb(67, 29, 114);
+}
+
+.like:focus{
+background-color: red;
+box-shadow: 0px 0px 20px rgb(205, 52, 182);
+border: 8px solid red;
+outline: none;
+border-radius: 100%;
+}

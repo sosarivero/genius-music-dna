@@ -50,29 +50,6 @@ body {
     background-color: rgb(16, 16, 20);
 }
 
-/* .like {
-
-}
-
-.like:hover {
-    cursor: pointer;
-    animation: likes 0.5s ease-in ;
-    animation-fill-mode: forwards;
-    border-radius: 100%;
-}
-
-.like:active{
-    background-color: aqua;
-    box-shadow: 0px 0px 50px rgb(29, 114, 96);
-}
-
-.like:focus{
-    background-color: aqua;
-    box-shadow: 0px 0px 20px rgb(205, 52, 182);
-    border: 8px solid red;
-    outline: none;
-} */
-
 @keyframes likes {
 
     25% {filter: invert(25%);}
