@@ -26,6 +26,7 @@ function SongCard() {
       <div className="song-card">
         {song && (
           <>
+            {console.log(song)}
             <img src={song.header_image_url} alt="" />
             <div className="info">
               <h1>{song.title}</h1>

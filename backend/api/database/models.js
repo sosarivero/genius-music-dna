@@ -1,4 +1,5 @@
 const User = require('../models/user.model');
+const Song = require('../models/song.model');
 
 function addRelationsToModels() {
   try {
