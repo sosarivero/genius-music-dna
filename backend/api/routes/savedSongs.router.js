@@ -5,6 +5,6 @@ const router = require('express').Router();
 router.get('/:id', getSavedSong);
 
 router.post('/', createSavedSong);
-router.delete('/', deleteSavedSong);
+router.delete('/:id', deleteSavedSong);
 
 module.exports = router;
