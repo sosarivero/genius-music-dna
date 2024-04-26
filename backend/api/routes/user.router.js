@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 router.get('/profile', checkAuth, getProfile);
 
-router.get('/:id', checkAuth, getOneUser);
+router.get('/:id', getOneUser);
 router.post('/', createUser);
 
 module.exports = router;

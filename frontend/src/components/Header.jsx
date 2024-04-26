@@ -23,9 +23,11 @@ const Header = () => {
               </Link>
             </>
           ) : (
-            <span>
-              {user.first_name} {user.last_name}
-            </span>
+            <Link to={`../user/${user.id}`}>
+              <button className="botonPerfil">
+                {user.first_name} {user.last_name}
+              </button>
+            </Link>
           )}
         </div>
         <div className="logo-holder">
