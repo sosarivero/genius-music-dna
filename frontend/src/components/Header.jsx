@@ -24,7 +24,7 @@ const Header = () => {
             </>
           ) : (
             <Link to={`../user/${user.id}`}>
-              <button className="botonPerfil">
+              <button className="user">
                 {user.first_name} {user.last_name}
               </button>
             </Link>

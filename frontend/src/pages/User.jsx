@@ -24,7 +24,7 @@ const User = () => {
     <>
       {userToRender && (
         <>
-          <hr></hr>
+          <hr className='hr'></hr>
           <section className="user_section">
             <div className="box">
               <img
@@ -33,7 +33,11 @@ const User = () => {
               ></img>
               <h1 className="userName">{`${userToRender.first_name} ${userToRender.last_name}`}</h1>
             </div>
-            <div className="userFav" />
+            <div className="userFav"> 
+{/*               <img  src='https://www.freeiconspng.com/thumbs/like-icon-png/like-outline-icon-png-22.png'
+              className='like'>
+              </img> */}
+            </div>
           </section>
         </>
       )}
