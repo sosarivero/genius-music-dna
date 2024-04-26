@@ -1,5 +1,8 @@
 import { getSongById } from '../services/geniusService';
-import { useEffect, useState } from 'react';
+import { saveSong } from '../services/songService';
+import { addSongToFavourites } from '../services/userService';
+import { UserContext } from '../layouts/mainLayout';
+import { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './SongCard.css';
 import YoutubeEmbed from './YoutubeEmbed';
@@ -7,6 +10,7 @@ import YoutubeEmbed from './YoutubeEmbed';
 function SongCard() {
   const [song, setSong] = useState(null);
   const { songId } = useParams();
+  const { user } = useContext(UserContext);
 
   async function handleSong() {
     try {
@@ -21,6 +25,17 @@ function SongCard() {
     handleSong();
   }, [songId]);
 
+  async function handleFavouriteAdd() {
+    try {
+      const saveResponse = await saveSong(song);
+      const addFavResponse = await addSongToFavourites(user.id, song.id);
+      console.log(saveResponse);
+      console.log(addFavResponse);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   return (
     <>
       <div className="song-card">
@@ -28,6 +43,9 @@ function SongCard() {
           <>
             {console.log(song)}
             <img src={song.header_image_url} alt="" />
+            <button type="button" onClick={handleFavouriteAdd}>
+              FAVOURITES
+            </button>
             <div className="info">
               <h1>{song.title}</h1>
               <h2>{song.artist_names}</h2>

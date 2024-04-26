@@ -1,4 +1,5 @@
 const User = require('../models/user.model');
+const SavedSong = require('../models/savedSong.model');
 
 async function getOneUser(req, res) {
   try {
@@ -39,8 +40,52 @@ async function getProfile(req, res) {
   }
 }
 
+async function addSavedSongToUser(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    const savedSong = await SavedSong.findOne({
+      where: { id: req.params.songId },
+    });
+
+    if (!user || !savedSong) {
+      return res.status(404).send(`${!user ? 'User' : 'Song'} not found`);
+    }
+
+    savedSong.addUser(user);
+    res.status(200).send(`Song ${savedSong.id} saved by User ${user.id}`);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function deleteSavedSongFromUser(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    const savedSong = await SavedSong.findOne({
+      where: { id: req.params.songId },
+    });
+
+    if (!user || !savedSong) {
+      return res.status(404).send(`${!user ? 'User' : 'Song'} not found`);
+    }
+
+    savedSong.removeUser(user);
+    res.status(200).send(`Song ${savedSong.id} removed from User ${user.id}'s favourites`);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
   createUser,
   getProfile,
+  addSavedSongToUser,
+  deleteSavedSongFromUser,
 };

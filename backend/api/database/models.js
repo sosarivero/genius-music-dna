@@ -3,6 +3,8 @@ const SavedSong = require('../models/savedSong.model');
 
 function addRelationsToModels() {
   try {
+    User.belongsToMany(SavedSong, { through: 'Users_Saved_Songs' });
+    SavedSong.belongsToMany(User, { through: 'Users_Saved_Songs' });
     console.log('Relations added to all models');
   } catch (error) {
     throw error;
