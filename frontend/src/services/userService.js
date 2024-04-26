@@ -18,4 +18,13 @@ async function getProfile(body) {
   }
 }
 
-export { getUser, getProfile };
+async function addSongToFavourites(userId, songId) {
+  try {
+    const response = await api.post(`/user/${userId}/addSong/${songId}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export { getUser, getProfile, addSongToFavourites };
