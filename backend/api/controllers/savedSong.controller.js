@@ -1,5 +1,4 @@
-import SavedSong from '../models/savedSong.model';
-
+const SavedSong = require('../models/savedSong.model');
 async function getSavedSong(req, res) {
   try {
     const foundSong = await SavedSong.findByPk(req.params.id);
