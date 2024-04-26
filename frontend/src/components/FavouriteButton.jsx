@@ -16,14 +16,12 @@ function FavouriteButton({ song }) {
     }
 
     checkFavourite();
-  }, [alreadySaved]);
+  }, []);
 
-  console.log(user.id, song.id);
   async function handleFavouriteAdd() {
     try {
       const saveResponse = await saveSong(song);
       const addFavResponse = await addSongToFavourites(user.id, song.id);
-      console.log(saveResponse, addFavResponse);
     } catch (error) {
       console.log(error.message);
     }
