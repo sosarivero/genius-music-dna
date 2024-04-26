@@ -14,13 +14,16 @@ async function getSavedSong(req, res) {
 
 async function createSavedSong(req, res) {
   try {
-    const createdSong = await SavedSong.create({
-      id: req.body.id,
-      title: req.body.title,
-      artist_names: req.body.artist_names,
-      release_date_for_display: req.body.release_date_for_display,
-      producer_artists: req.body.producer_artists,
-      media: req.body.media,
+    const createdSong = await SavedSong.findOrCreate({
+      where: { id: req.body.id },
+      defaults: {
+        id: req.body.id,
+        title: req.body.title,
+        artist_names: req.body.artist_names,
+        release_date_for_display: req.body.release_date_for_display,
+        producer_artists: req.body.producer_artists,
+        media: req.body.media,
+      },
     });
     return res.status(200).json({ message: 'Song saved', song: createdSong });
   } catch (error) {

@@ -27,8 +27,7 @@ function SongCard() {
       <div className="song-card">
         {song && (
           <>
-            {console.log(song)}
-            <img  className='songImg' src={song.header_image_url} alt="" />
+            <img className="songImg" src={song.header_image_url} alt="" />
             <div className="info">
               <h1>{song.title}</h1>
               <h2>{song.artist_names}</h2>

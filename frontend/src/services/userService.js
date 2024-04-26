@@ -27,6 +27,15 @@ async function addSongToFavourites(userId, songId) {
   }
 }
 
+async function removeSongFromFavourites(userId, songId) {
+  try {
+    const response = await api.delete(`/user/${userId}/removeSong/${songId}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 async function getUserSongRelationship(userId, songId) {
   try {
     const response = await api.get(`/user/${userId}/song/${songId}`);
@@ -36,4 +45,4 @@ async function getUserSongRelationship(userId, songId) {
   }
 }
 
-export { getUser, getProfile, addSongToFavourites, getUserSongRelationship };
+export { getUser, getProfile, addSongToFavourites, removeSongFromFavourites, getUserSongRelationship };
