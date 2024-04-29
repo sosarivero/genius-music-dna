@@ -37,14 +37,17 @@ function FavouriteButton({ song }) {
     }
   }
   return (
-    <button
-      className={alreadySaved ? 'saved' : 'not-saved'}
-      type="button"
+    <span
+      className={'heart ' + (alreadySaved ? 'saved' : 'not-saved')}
+      // type="button"
       onClick={alreadySaved ? handleFavouriteRemove : handleFavouriteAdd}
-      style={alreadySaved ? { border: '5px red solid' } : { border: '5px blue solid' }}
+      // style={alreadySaved ? { border: '5px red solid' } : { border: '5px blue solid' }}
     >
-      <img src="https://www.freeiconspng.com/thumbs/like-icon-png/like-outline-icon-png-22.png" />
-    </button>
+      {/* <img
+        className="heartImage"
+        src="https://www.freeiconspng.com/thumbs/like-icon-png/like-outline-icon-png-22.png"
+      /> */}
+    </span>
   );
 }
 

@@ -30,7 +30,9 @@ function SongCard() {
             {console.log(song)}
             <img className="songImg" src={song.header_image_url} alt="" />
             <div className="info">
-              <h1>{song.title}</h1>
+              <FavouriteButton song={song} />
+
+              <h1> {song.title}</h1>
               <h2>{song.artist_names}</h2>
               <a>Released in {song.release_date_for_display}</a>
               <br />
@@ -38,7 +40,6 @@ function SongCard() {
               {song.producer_artists.map((obj) => (
                 <li key={obj.name}>{obj.name}</li>
               ))}
-              <FavouriteButton song={song} />
             </div>
             {/* Renders Youtube embeds if 'youtube' is listed as one of the media providers */}
             {song.media.map((item, index) => {
