@@ -27,7 +27,7 @@ function UserFavourites() {
         <div className="favList">
           {favouriteSongs.map((song) => {
             return (
-              <Link to={`../songs/${song.id}`}>
+              <Link to={`../songs/${song.id}`} key={song.id}>
                 <div className="favSong">
                   <img src={song.image} alt="" />
                   <ul>

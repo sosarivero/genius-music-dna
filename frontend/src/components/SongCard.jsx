@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import './SongCard.css';
 import YoutubeEmbed from './YoutubeEmbed';
 import FavouriteButton from './FavouriteButton';
+import MediaIcons from './MediaIcons';
 import { UserContext } from '../layouts/mainLayout';
 import { CircularProgress } from '@mui/material';
 
@@ -31,6 +32,7 @@ function SongCard() {
         {!song && <CircularProgress className="progress" size={'450px'} thickness={3} />}
         {song && (
           <>
+            {console.log(song)}
             <img className="songImg" src={song.header_image_url} alt="" />
             <div className="info">
               {user && <FavouriteButton song={song} />}
@@ -43,6 +45,7 @@ function SongCard() {
               {song.producer_artists.map((obj) => (
                 <li key={obj.name}>{obj.name}</li>
               ))}
+              <MediaIcons media={song.media} />
             </div>
             {/* Renders Youtube embeds if 'youtube' is listed as one of the media providers */}
             {song.media.map((item, index) => {
