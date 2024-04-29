@@ -29,7 +29,7 @@ function SongCard() {
   return (
     <>
       <div className="song-card">
-        {!song && <CircularProgress className="progress" size={'450px'} thickness={3} />}
+        {!song && <CircularProgress className="progress" size={'450px'} thickness={1} />}
         {song && (
           <>
             {console.log(song)}

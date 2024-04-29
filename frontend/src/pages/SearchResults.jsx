@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { QueryContext } from '../layouts/mainLayout';
 import SearchResultCard from '../components/SearchResultCard';
 import { Link } from 'react-router-dom';
