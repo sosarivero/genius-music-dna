@@ -22,6 +22,7 @@ async function createSavedSong(req, res) {
         artist_names: req.body.artist_names,
         release_date_for_display: req.body.release_date_for_display,
         producer_artists: req.body.producer_artists,
+        image: req.body.image,
         media: req.body.media,
       },
     });

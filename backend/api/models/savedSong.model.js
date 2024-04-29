@@ -19,6 +19,9 @@ const SavedSong = sequelize.define(
     release_date_for_display: {
       type: DataTypes.STRING,
     },
+    image: {
+      type: DataTypes.STRING,
+    },
     producer_artists: {
       type: DataTypes.STRING,
     },

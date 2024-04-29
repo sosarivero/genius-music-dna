@@ -8,12 +8,18 @@ import api from '.';
 // media: req.body.media,
 
 async function saveSong(geniusSong) {
+  {
+    console.log(geniusSong.header_image_thumbnail_url);
+  }
   const requestBody = {
     id: geniusSong.id,
     title: geniusSong.title,
     artist_names: geniusSong.artist_names,
     release_date_for_display: geniusSong.release_date_for_display,
+    image: geniusSong.header_image_thumbnail_url,
   };
+
+  console.log(requestBody);
 
   try {
     const response = api.post('/saved/', requestBody);
