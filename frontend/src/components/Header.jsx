@@ -1,10 +1,23 @@
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../layouts/mainLayout';
 import { useContext } from 'react';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Header = () => {
+  const navigate = useNavigate();
   const { user } = useContext(UserContext);
+
+  function logout() {
+    localStorage.clear();
+    if (localStorage.getItem()) {
+      //check something in local storage so you can know
+      // if you should reload or not
+
+      window.location.reload();
+    }
+  }
+
   return (
     <>
       <div className="divHeader">
@@ -23,11 +36,16 @@ const Header = () => {
               </Link>
             </>
           ) : (
-            <Link to={`../user/${user.id}`}>
-              <button className="user">
-                {user.first_name} {user.last_name}
+            <div className="user-badge">
+              <Link to={`../user/${user.id}`}>
+                <button className="user">
+                  {user.first_name} {user.last_name}
+                </button>
+              </Link>
+              <button className="logout-icon" onClick={() => logout()}>
+                <LogoutIcon fontSize={'medium'} />
               </button>
-            </Link>
+            </div>
           )}
         </div>
         <div className="logo-holder">
