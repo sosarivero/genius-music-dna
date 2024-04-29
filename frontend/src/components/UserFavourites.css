@@ -1,0 +1,29 @@
+.favList {
+  border: 5px solid rgb(68, 18, 70);
+  margin: 40px;
+  display: flex;
+  flex-flow: wrap;
+  gap: 5px;
+}
+
+.favList li {
+  list-style: none;
+}
+
+.favList a {
+  text-decoration: none;
+  color: white;
+}
+
+.favSong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  background-color: #a855f7;
+}
+
+.favSong img {
+  width: 150px;
+  height: 150px;
+}

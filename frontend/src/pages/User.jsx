@@ -34,9 +34,7 @@ const User = () => {
               ></img>
               <h1 className="userName">{`${userToRender.first_name} ${userToRender.last_name}`}</h1>
             </div>
-            <div className="userFav">
-              <UserFavourites />
-            </div>
+            <UserFavourites />
           </section>
         </>
       )}

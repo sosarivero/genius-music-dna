@@ -24,21 +24,20 @@ function UserFavourites() {
   return (
     <>
       {favouriteSongs && (
-        <ul>
+        <div className="favList">
           {favouriteSongs.map((song) => {
             return (
               <Link to={`../songs/${song.id}`}>
-                <div>
+                <div className="favSong">
                   <img src={song.image} alt="" />
                   <ul>
                     <li>{song.title}</li>
-                    <li>by {song.artist_names}</li>
                   </ul>
                 </div>
               </Link>
             );
           })}
-        </ul>
+        </div>
       )}
     </>
   );
