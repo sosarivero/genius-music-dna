@@ -14,6 +14,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { signIn } from '../services/authService';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { getProfile } from '../services/userService';
+import { useContext } from 'react';
+import { UserContext } from '../layouts/mainLayout';
 
 function Copyright(props) {
   return (
@@ -33,6 +36,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   async function handleSubmit(event) {
@@ -47,6 +51,9 @@ export default function SignIn() {
     try {
       const response = await signIn(requestBody);
       localStorage.setItem('token', response.token);
+
+      setUser(await getProfile(localStorage.getItem('token')));
+
       navigate('../');
     } catch (error) {
       console.log(error);

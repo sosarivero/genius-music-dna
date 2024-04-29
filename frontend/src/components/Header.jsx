@@ -1,21 +1,18 @@
 import './Header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../layouts/mainLayout';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+  console.log(user);
 
   function logout() {
     localStorage.clear();
-    if (localStorage.getItem()) {
-      //check something in local storage so you can know
-      // if you should reload or not
-
-      window.location.reload();
-    }
+    setUser(null);
+    navigate('../');
   }
 
   return (
