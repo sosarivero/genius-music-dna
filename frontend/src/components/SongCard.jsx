@@ -5,6 +5,7 @@ import './SongCard.css';
 import YoutubeEmbed from './YoutubeEmbed';
 import FavouriteButton from './FavouriteButton';
 import { UserContext } from '../layouts/mainLayout';
+import { CircularProgress } from '@mui/material';
 
 function SongCard() {
   const { user } = useContext(UserContext);
@@ -27,6 +28,7 @@ function SongCard() {
   return (
     <>
       <div className="song-card">
+        {!song && <CircularProgress className="progress" size={'450px'} thickness={3} />}
         {song && (
           <>
             <img className="songImg" src={song.header_image_url} alt="" />

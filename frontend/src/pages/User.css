@@ -1,7 +1,7 @@
 .hr {
   display: block;
   margin: auto;
-  width: 1500px;
+  width: 99vw;
   color: rgb(68, 18, 70);
 }
 
@@ -42,6 +42,7 @@
 
 .user_section {
   display: flex;
+  flex-flow: wrap;
 }
 
 body {

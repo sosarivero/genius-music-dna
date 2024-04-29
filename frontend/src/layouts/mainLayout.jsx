@@ -38,9 +38,6 @@ function Root() {
         <Header />
         {!hideSearch && <SearchBar />}
         <Outlet />
-        <footer>
-          <small>Footer</small>
-        </footer>
       </QueryContext.Provider>
     </UserContext.Provider>
   );

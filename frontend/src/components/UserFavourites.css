@@ -5,6 +5,7 @@
   flex-flow: wrap;
   gap: 5px;
   width: 800px;
+  max-width: 75vw;
 }
 
 .favList li {
