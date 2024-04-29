@@ -103,6 +103,24 @@ async function findSongUserRelationship(req, res) {
     console.log(error.message);
   }
 }
+
+async function getAllSavedSongs(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    if (!user) {
+      return res.status(404).send(`User ${req.params.userId} not found`);
+    }
+    const result = await user.getFavourites();
+    console.log(await result);
+    return res.status(200).send(await result);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
   createUser,
@@ -110,4 +128,5 @@ module.exports = {
   addSavedSongToUser,
   deleteSavedSongFromUser,
   findSongUserRelationship,
+  getAllSavedSongs,
 };

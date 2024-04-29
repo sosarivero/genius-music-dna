@@ -45,4 +45,20 @@ async function getUserSongRelationship(userId, songId) {
   }
 }
 
-export { getUser, getProfile, addSongToFavourites, removeSongFromFavourites, getUserSongRelationship };
+async function getAllFavourites(userId) {
+  try {
+    const response = await api.get(`/user/${userId}/favs`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export {
+  getUser,
+  getProfile,
+  addSongToFavourites,
+  removeSongFromFavourites,
+  getUserSongRelationship,
+  getAllFavourites,
+};
