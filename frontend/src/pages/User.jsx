@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './User.css';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../services/userService';
+import UserFavourites from '../components/UserFavourites';
 
 const User = () => {
   const { userId } = useParams();
@@ -24,7 +25,7 @@ const User = () => {
     <>
       {userToRender && (
         <>
-          <hr className='hr'></hr>
+          <hr className="hr"></hr>
           <section className="user_section">
             <div className="box">
               <img
@@ -34,6 +35,7 @@ const User = () => {
               <h1 className="userName">{`${userToRender.first_name} ${userToRender.last_name}`}</h1>
             </div>
             <div className="userFav">
+              <UserFavourites />
             </div>
           </section>
         </>
