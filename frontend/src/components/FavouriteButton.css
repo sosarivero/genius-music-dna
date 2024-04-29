@@ -1,4 +1,4 @@
-.like {
+/* .like {
     background: none;
     border: none;
     scale: 30%;
@@ -22,4 +22,47 @@ box-shadow: 0px 0px 20px rgb(205, 52, 182);
 border: 8px solid red;
 outline: none;
 border-radius: 100%;
+} */
+
+.not-saved {
+  background: none;
+  border: none;
+  scale: 15%;
+  position: relative;
+  right: 135px;
+  bottom: 50px;
+}
+
+.not-saved:hover {
+  cursor: pointer;
+  border-radius: 100%;
+  animation: like 0.2s ease-in forwards;
+}
+
+.not-saved:active {
+  background-color: aqua;
+  box-shadow: 0px 0px 50px rgb(67, 29, 114);
+}
+
+@keyframes like {
+  0% {
+    filter: invert(0%);
+  }
+  50% {
+    filter: invert(50%);
+  }
+  100% {
+    filter: invert(100%);
+  }
+}
+
+.saved {
+  filter: invert(100%);
+  border-radius: 100%;
+  border: 8px solid aqua;
+  background-color: aqua;
+  scale: 15%;
+  position: relative;
+  right: 135px;
+  bottom: 50px;
 }
