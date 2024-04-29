@@ -9,9 +9,12 @@ function FavouriteButton({ song }) {
   const [alreadySaved, setAlreadySaved] = useState(false);
 
   async function checkFavourite() {
-    let isSaved = await getUserSongRelationship(user.id, song.id);
-
-    setAlreadySaved(await isSaved.data);
+    try {
+      let isSaved = await getUserSongRelationship(user.id, song.id);
+      setAlreadySaved(await isSaved.data);
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   useEffect(() => {

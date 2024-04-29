@@ -10,8 +10,8 @@ function SearchResults() {
       {searchResults !== '' &&
         searchResults.map((obj) => {
           return (
-            <Link to={obj.result.api_path}>
-              <SearchResultCard obj={obj} key={obj.result.id} />
+            <Link to={obj.result.api_path} key={obj.result.id}>
+              <SearchResultCard obj={obj} />
             </Link>
           );
         })}

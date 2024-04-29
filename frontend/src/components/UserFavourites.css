@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: wrap;
   gap: 5px;
+  width: 800px;
 }
 
 .favList li {

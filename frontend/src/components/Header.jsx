@@ -7,12 +7,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 const Header = () => {
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
-  console.log(user);
 
   function logout() {
     localStorage.clear();
     setUser(null);
-    navigate('../');
+    // navigate('../');
   }
 
   return (

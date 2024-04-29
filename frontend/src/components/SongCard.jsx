@@ -1,11 +1,13 @@
 import { getSongById } from '../services/geniusService';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './SongCard.css';
 import YoutubeEmbed from './YoutubeEmbed';
 import FavouriteButton from './FavouriteButton';
+import { UserContext } from '../layouts/mainLayout';
 
 function SongCard() {
+  const { user } = useContext(UserContext);
   const [song, setSong] = useState(null);
   const { songId } = useParams();
 
@@ -27,10 +29,9 @@ function SongCard() {
       <div className="song-card">
         {song && (
           <>
-            {console.log(song)}
             <img className="songImg" src={song.header_image_url} alt="" />
             <div className="info">
-              <FavouriteButton song={song} />
+              {user && <FavouriteButton song={song} />}
 
               <h1> {song.title}</h1>
               <h2>{song.artist_names}</h2>
@@ -44,7 +45,7 @@ function SongCard() {
             {/* Renders Youtube embeds if 'youtube' is listed as one of the media providers */}
             {song.media.map((item, index) => {
               if (item.provider === 'youtube') {
-                return <YoutubeEmbed youtubeLink={item.url} />;
+                return <YoutubeEmbed key={index} youtubeLink={item.url} />;
               }
             })}
           </>
@@ -53,7 +54,7 @@ function SongCard() {
       {song && (
         <div>
           {song.song_relationships[0].songs.map((obj) => (
-            <div className="song-card reversed">
+            <div className="song-card reversed" key={obj.id}>
               <Link to={obj.api_path}>
                 <img className="sampleImg" src={obj.header_image_url} alt="" />
               </Link>
