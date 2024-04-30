@@ -26,7 +26,7 @@ function FriendsList() {
         friends.map((friend) => (
           <Link to={`../user/${friend.id}`}>
             <div className="friend">
-              <img className="small-avatar" src="../../public/dalonso.jpg"></img>
+              <img className="small-avatar" src={friend.image}></img>
               <span className="friend-name">{friend.first_name}</span>
             </div>
           </Link>
