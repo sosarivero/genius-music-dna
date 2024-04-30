@@ -2,12 +2,15 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user.model.js');
 const bcrypt = require('bcrypt');
 
+const { getRandomAlonso } = require('../utils/fernandoAlonso.js');
+
 async function Signup(req, res) {
   const saltRounds = bcrypt.genSaltSync(parseInt(process.env.SALTROUNDS));
   const hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
   req.body.password = hashedPassword;
+  const body = { ...req.body, image: getRandomAlonso() };
   try {
-    const user = await User.create(req.body);
+    const user = await User.create(body); // req.body
     const payload = { email: req.body.email };
     const token = jwt.sign(payload, process.env.SECRET);
 

@@ -24,6 +24,7 @@ const initializeAndListenExpress = () => {
       .use(express.json())
       .use(morgan('dev'))
       .use('/api', require('./api/routes/index'))
+      .use(express.static('public'))
       .listen(3000, () => {
         console.log('Server started');
       });
