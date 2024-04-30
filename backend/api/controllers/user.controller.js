@@ -182,6 +182,28 @@ async function removeFriend(req, res) {
   }
 }
 
+async function areFriends(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    const friend = await User.findOne({
+      where: { id: req.params.friendId },
+    });
+
+    if (!user || !friend) {
+      return res.status(404).send(false);
+    }
+
+    const result = await user.hasFriend(friend);
+    console.log(await result);
+    return res.status(200).send(await result);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
   createUser,
@@ -193,4 +215,5 @@ module.exports = {
   getFriends,
   addFriend,
   removeFriend,
+  areFriends,
 };

@@ -9,6 +9,7 @@ const {
   getFriends,
   addFriend,
   removeFriend,
+  areFriends,
 } = require('../controllers/user.controller.js');
 
 const { checkAuth } = require('../controllers/middleware/');
@@ -27,6 +28,7 @@ router.delete('/:userId/removeSong/:songId', deleteSavedSongFromUser);
 router.get('/:userId/favs', getAllSavedSongs);
 
 router.get('/:userId/friends', getFriends);
+router.get('/:userId/friends/:friendId', areFriends);
 router.post('/:userId/friends/:friendId', addFriend);
 router.delete('/:userId/friends/:friendId', removeFriend);
 
