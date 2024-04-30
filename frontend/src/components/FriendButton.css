@@ -1,0 +1,116 @@
+.saved,
+.heart.saved,
+.heart.saved::after,
+.heart.saved::before {
+  /* animation: like 0.2s ease-in forwards; */
+  background-color: red;
+}
+
+.heart,
+.heart::after,
+.heart::before {
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.heart {
+  scale: 50%;
+  background-color: white;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 40px;
+  right: 50px;
+  transform: rotate(-45deg);
+  width: 30px;
+  margin-top: 20px;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  background-color: white;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+/* .like {
+    background: none;
+    border: none;
+    scale: 30%;
+    position: relative;
+    right: 135px;
+}
+
+.like:hover {
+cursor: pointer;
+border-radius: 100%;
+}
+
+.like:active{
+background-color: red;
+box-shadow: 0px 0px 50px rgb(67, 29, 114);
+}
+
+.like:focus{
+background-color: red;
+box-shadow: 0px 0px 20px rgb(205, 52, 182);
+border: 8px solid red;
+outline: none;
+border-radius: 100%;
+} */
+
+/* .not-saved {
+  background: none;
+  border: none;
+  scale: 15%;
+  position: relative;
+  right: 135px;
+  bottom: 50px;
+} */
+
+/* .not-saved:hover {
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: transparent;
+  animation: like 0.2s ease-in forwards;
+} */
+
+/* .not-saved:active {
+  box-shadow: 0px 0px 50px rgb(67, 29, 114);
+} */
+
+/* @keyframes like {
+  0% {
+    background-color: lightcoral;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: darkred;
+  }
+} */
+
+/* .saved {
+  filter: invert(100%);
+  border-radius: 100%;
+
+  scale: 15%;
+  position: relative;
+  right: 135px;
+  bottom: 50px;
+} */
