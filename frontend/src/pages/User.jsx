@@ -33,10 +33,7 @@ const User = () => {
           <hr className="hr"></hr>
           <section className="user_section">
             <div className="box">
-              <img
-                className="userImg"
-                src="https://s.libertaddigital.com/fotos/noticias/250/250/dalonso220608.jpg"
-              ></img>
+              <img className="userImg" src="../../public/dalonso.jpg"></img>
               {user && user.id !== parseInt(userId) && <FriendButton />}
 
               <h1 className="userName">{`${userToRender.first_name} ${userToRender.last_name}`}</h1>

@@ -1,6 +1,7 @@
 import { getFriends } from '../services/userService';
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import './FriendsList.css';
 
 function FriendsList() {
   const { userId } = useParams();
@@ -20,16 +21,17 @@ function FriendsList() {
   }, [userId]);
 
   return (
-    <>
+    <div className="friend-list">
       {friends &&
         friends.map((friend) => (
           <Link to={`../user/${friend.id}`}>
-            <div>
-              {friend.first_name} {friend.last_name}
+            <div className="friend">
+              <img className="small-avatar" src="../../public/dalonso.jpg"></img>
+              <span className="friend-name">{friend.first_name}</span>
             </div>
           </Link>
         ))}
-    </>
+    </div>
   );
 }
 
