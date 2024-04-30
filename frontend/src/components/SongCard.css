@@ -59,3 +59,8 @@
     background-position: 0% 50%;
   }
 }
+
+.progress {
+  background-image: url(../../public/Logo.svg);
+  background-size: cover;
+}
