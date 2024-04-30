@@ -54,6 +54,42 @@ async function getAllFavourites(userId) {
   }
 }
 
+async function getFriends(userId) {
+  try {
+    const response = await api.get(`/user/${userId}/friends/`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function addFriend(userId, friendId) {
+  try {
+    const response = await api.post(`/user/${userId}/friends/${friendId}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function removeFriend(userId, friendId) {
+  try {
+    const response = await api.delete(`/user/${userId}/friends/${friendId}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function areFriends(userId, friendId) {
+  try {
+    const response = await api.get(`/user/${userId}/friends/${friendId}`);
+    return response;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 export {
   getUser,
   getProfile,
@@ -61,4 +97,8 @@ export {
   removeSongFromFavourites,
   getUserSongRelationship,
   getAllFavourites,
+  getFriends,
+  addFriend,
+  removeFriend,
+  areFriends,
 };
