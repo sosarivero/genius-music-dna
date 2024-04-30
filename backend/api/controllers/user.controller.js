@@ -154,6 +154,7 @@ async function addFriend(req, res) {
     }
 
     const result = await user.addFriend(newFriend);
+    await newFriend.addFriend(user);
     return res.status(200).send(await result);
   } catch (error) {
     console.log(error.message);
