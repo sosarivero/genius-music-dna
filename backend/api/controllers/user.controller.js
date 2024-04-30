@@ -121,6 +121,67 @@ async function getAllSavedSongs(req, res) {
   }
 }
 
+// Functions related to friendships
+async function getFriends(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    if (!user) {
+      return res.status(404).send(`User ${req.params.userId} not found`);
+    }
+
+    const result = await user.getFriends();
+    return res.status(200).send(await result);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function addFriend(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    const newFriend = await User.findOne({
+      where: { id: req.params.friendId },
+    });
+
+    if (!user) {
+      return res.status(404).send(`User ${req.params.userId} not found`);
+    }
+
+    const result = await user.addFriend(newFriend);
+    return res.status(200).send(await result);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+async function removeFriend(req, res) {
+  try {
+    const user = await User.findOne({
+      where: { id: req.params.userId },
+    });
+
+    const friend = await User.findOne({
+      where: { id: req.params.friendId },
+    });
+
+    if (!user) {
+      return res.status(404).send(`User not found`);
+    }
+
+    const result = await user.removeFriend(friend);
+    console.log(result);
+    return res.status(200).send(`Friend removed`);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
   createUser,
@@ -129,4 +190,7 @@ module.exports = {
   deleteSavedSongFromUser,
   findSongUserRelationship,
   getAllSavedSongs,
+  getFriends,
+  addFriend,
+  removeFriend,
 };

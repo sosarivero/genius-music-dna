@@ -8,6 +8,12 @@ function addRelationsToModels() {
       through: 'Users_Saved_Songs',
     });
     SavedSong.belongsToMany(User, { through: 'Users_Saved_Songs' });
+
+    User.belongsToMany(User, {
+      as: { singular: 'friend', plural: 'friends' },
+      through: 'friendships',
+    });
+
     console.log('Relations added to all models');
   } catch (error) {
     throw error;

@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const { checkConnection, syncModels } = require('./api/database/index');
 const { addRelationsToModels } = require('./api/database/models');
+const morgan = require('morgan');
 
 async function checkAndSyncSQL() {
   await checkConnection();
@@ -21,6 +22,7 @@ const initializeAndListenExpress = () => {
         }),
       )
       .use(express.json())
+      .use(morgan('dev'))
       .use('/api', require('./api/routes/index'))
       .listen(3000, () => {
         console.log('Server started');
