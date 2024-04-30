@@ -10,7 +10,6 @@ function UserFavourites() {
   async function handleFavourites() {
     try {
       const { data } = await getAllFavourites(userId);
-      console.log(await data);
       setFavouriteSongs(await data);
     } catch (error) {
       console.error('Error fetching favourite songs:', error);

@@ -10,18 +10,17 @@ function FriendButton() {
 
   const [alreadyFriends, setAlreadyFriends] = useState(false);
 
-  async function checkFriends() {
-    try {
-      let response = await areFriends(user.id, friendId);
-      setAlreadyFriends(await response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
-
   useEffect(() => {
+    async function checkFriends() {
+      try {
+        let response = await areFriends(user.id, friendId);
+        setAlreadyFriends(await response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
     checkFriends();
-  }, []);
+  }, [user]);
 
   async function handleFriendAdd() {
     try {
