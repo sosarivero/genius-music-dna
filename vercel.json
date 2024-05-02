@@ -1,10 +1,3 @@
 {
-  "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/signin", "dest": "/" },
-    { "src": "/singup", "dest": "/" },
-    { "src": "/search", "dest": "/" },
-    { "src": "/songs/(.*)", "dest": "/" },
-    { "src": "/users/(.*)", "dest": "/" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
