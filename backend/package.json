@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -29,5 +30,8 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.9.6",
     "sequelize": "^6.37.3"
+  },
+  "engines": {
+    "node": "21.5.0"
   }
 }
