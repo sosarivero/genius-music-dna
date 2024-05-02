@@ -14,6 +14,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import './SignUp.css';
+import { UserContext } from '../layouts/mainLayout';
+import { useContext } from 'react';
 
 import { signUp } from '../services/authService';
 
@@ -46,6 +48,7 @@ const defaultTheme = theme;
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -65,7 +68,10 @@ export default function SignUp() {
 
     try {
       const response = await signUp(requestBody);
-      localStorage.setItem('token', response.token);
+      localStorage.setItem('token', await response.token);
+
+      setUser(await getProfile(localStorage.getItem('token')));
+
       navigate('../');
     } catch (error) {
       console.error(error);
@@ -90,7 +96,16 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box className="boton" component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 6 }}>
+          <Box
+            className="boton"
+            component="form"
+            noValidate
+            onSubmit={() => {
+              handleSubmit();
+              navigate('/');
+            }}
+            sx={{ mt: 6 }}
+          >
             <Grid container spacing={4}>
               <Grid item xs={12} sm={6}>
                 <TextField

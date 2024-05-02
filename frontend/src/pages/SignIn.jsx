@@ -50,11 +50,9 @@ export default function SignIn() {
 
     try {
       const response = await signIn(requestBody);
-      localStorage.setItem('token', response.token);
+      localStorage.setItem('token', await response.token);
 
       setUser(await getProfile(localStorage.getItem('token')));
-
-      navigate('../');
     } catch (error) {
       console.log(error);
     }
