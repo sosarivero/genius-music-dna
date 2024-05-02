@@ -68,11 +68,7 @@ export default function SignUp() {
 
     try {
       const response = await signUp(requestBody);
-      localStorage.setItem('token', await response.token);
-
-      setUser(await getProfile(localStorage.getItem('token')));
-
-      navigate('../');
+      localStorage.setItem('token', response.token);
     } catch (error) {
       console.error(error);
     }
@@ -100,8 +96,8 @@ export default function SignUp() {
             className="boton"
             component="form"
             noValidate
-            onSubmit={() => {
-              handleSubmit();
+            onSubmit={(e) => {
+              handleSubmit(e);
               navigate('/');
             }}
             sx={{ mt: 6 }}
