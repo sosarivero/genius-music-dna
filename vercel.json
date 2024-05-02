@@ -7,10 +7,6 @@
     {
       "source": "/:path(api/.*)",
       "destination": "/api"
-    },
-    {
-      "src": "/[^.]+",
-      "dest": "/"
     }
   ]
 }
